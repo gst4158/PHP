@@ -1,0 +1,45 @@
+.grid-flush {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.has-bg {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.has-bg-grey,
+.has-bg-gray {
+  background-color: $grey;
+}
+
+.has-bg-grey-light,
+.has-bg-gray-light {
+  background-color: $greylight;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.overflow-hidden {
+  position: relative;
+  overflow: hidden;
+}
+
+@include media-query( 'desktop' ) {
+  .desktop-padding-left-20 {
+    padding-left: 20px !important;
+  }
+}
+
+
+@include media-query( 'mobile' ) {
+  .mobile-padding-top-0 {
+    padding-top: 0 !important;
+  }
+}

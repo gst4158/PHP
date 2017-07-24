@@ -1,0 +1,23 @@
+bluestar-wrapper {
+  article {
+    position: relative;
+    border-bottm: 1px solid $grey;
+    -webkit-box-shadow: inset 0px -5px 5px 0px rgba($grey, .25);
+    -moz-box-shadow: inset 0px -5px 5px 0px rgba($grey, .25);
+    box-shadow: inset 0px -5px 5px 0px rgba($grey, .25);
+  }
+}
+
+.post-wrapper {
+  overflow: hidden;
+}
+
+@include media-query( $breakpoints:('tablet', 'desktop')) {
+  .input-has-icons[for=form-submit] .input-icons {
+    height: calc(100% + 20px);
+    top: -9px;
+    right: 0;
+    padding-top: 5px;
+  }
+
+}

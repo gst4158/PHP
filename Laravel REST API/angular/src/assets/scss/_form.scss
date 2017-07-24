@@ -1,0 +1,67 @@
+input {
+  padding: 10px 10px;
+  border: 1px solid lighten($grey, 50%);
+  &:hover,
+  &:active,
+  &:focus {
+    background: darken($greylight, 15%);
+    color: lighten($grey, 50%);
+  }
+
+  &.input-light {
+    background: $greylighter;
+    &:hover,
+    &:active,
+    &:focus {
+      background: lighten($greylighter, 15%);
+      color: $bodycopyfont;
+    }
+  }
+}
+
+.input-has-icons {
+  position: relative;
+  input {
+    padding-right: 10%;
+    overflow: hidden;
+  }
+  .input-icons {
+    position: absolute;
+    bottom: 0px; top: 0px; right: 10px;
+    height: 100%;
+    padding: 7px 5px 0px 5px;
+    border-left: 1px solid $greylight;
+    background: lighten($greylighter, 15%);
+    z-index: 1;
+    i {
+      font-size: 20px;
+    }
+  }
+}
+
+label {
+
+  a, .has-icon {
+    cursor: pointer;
+    color: $anchorColor;
+    &:hover {
+      color: darken($anchorColor, 15%);
+    }
+  }
+}
+
+@include media-query( 'mobile' ) {
+  .input-has-icons {
+    input {
+      padding: 10px;
+    }
+    .input-icons {
+      position: relative;
+      float: right;
+      top: auto;
+      right: auto;
+      z-index: 1;
+      background: #fff;
+    }
+  }
+}

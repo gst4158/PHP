@@ -1,0 +1,53 @@
+.messages {
+  position: relative;
+  display: none;
+  padding: 5px 10px;
+  margin-bottom: 20px;
+  border: 1px solid $grey;
+  text-align: center;
+
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+
+  -webkit-transition: all .75s ease-in-out;
+  transition: all .75s ease-in-out;
+  opacity: 0;
+
+  -webkit-animation-duration: .75s;
+  -webkit-animation-fill-mode: both;
+  -webkit-animation-delay: 2s;
+  animation-duration: .75s;
+  animation-fill-mode: both;
+  animation-delay: 2s;
+
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      height: 0;
+      padding: 0;
+      margin-bottom: 0;
+      border: none;
+    }
+  }
+
+
+  &.active {
+    display: block;
+    opacity: 1;
+    animation-name: fadeOut;
+  }
+
+  &.message-red {
+    background: $errorRed;
+    color: darken($errorRed, 50%);
+    border-color: darken($errorRed, 50%);
+  }
+  &.message-green {
+    background: $successGreen;
+    color: darken($successGreen, 50%);
+    border-color: darken($successGreen, 50%);
+  }
+}

@@ -1,0 +1,46 @@
+//==========================================================================//
+// Font Familes & Weights
+//==========================================================================//
+$font-open-sans: 'Open Sans';
+$font-icons: 'Material Icons';
+
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+//==========================================================================//
+// Colors
+//==========================================================================//
+$white: #FFFFFF;
+$grey: #c1c1c1;
+$greylight: lighten($grey, 15%);
+$greylighter: #F3F3F3;
+
+$bodycopyfont: #283545;
+$anchorColor: #007EE1;
+
+$errorRed: #FFCCCC;
+$successGreen: #DFF2BF;
+
+//==========================================================================//
+// Grid Stucture
+//==========================================================================//
+$distance : (
+  //5, 10, 15, 20, 25, 30, 33, 35, 40, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100
+  0, 5, 10, 15, 20, 25, 30, 35, 40
+);
+
+$sides : (
+  top,
+  right,
+  bottom,
+  left,
+  //vertical top bottom,
+  //horizontal left right
+);
+
+$properties : (
+  padding 'px' $sides,
+  margin 'px' $sides,
+);
