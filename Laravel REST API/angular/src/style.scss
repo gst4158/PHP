@@ -1,0 +1,61 @@
+// Imports
+// ============================================//
+// custom imports
+@import 'assets/scss/_helpers/_functions.scss';
+@import 'assets/scss/_helpers/_variables.scss';
+@import 'assets/scss/_helpers/_mixins.scss';
+@import 'assets/scss/_reset.scss';
+@import "assets/scss/_unsemantic/unsemantic-grid-responsive-tablet-no-ie7";
+
+// Module Imports
+// ============================================//
+@import 'assets/scss/_typography.scss';
+@import 'assets/scss/_grid.scss';
+@import 'assets/scss/_list.scss';
+@import 'assets/scss/_navigation.scss';
+@import 'assets/scss/_icons.scss';
+@import 'assets/scss/_form.scss';
+@import 'assets/scss/_messages.scss';
+@import 'assets/scss/_blueStarApp.scss';
+
+// Generate font-face styles
+// ============================================//
+@include font-face($font-open-sans, '/assets/fonts/OpenSans-Light-webfont', $font-weight-light);
+@include font-face($font-open-sans, '/assets/fonts/OpenSans-Regular-webfont', $font-weight-normal);
+@include font-face($font-open-sans, '/assets/fonts/OpenSans-Semibold-webfont', $font-weight-semibold);
+@include font-face($font-open-sans, '/assets/fonts/OpenSans-Bold-webfont', $font-weight-bold);
+@include font-face($font-icons,     '/assets/fonts/MaterialIcons-Regular', $font-weight-normal);
+
+// Overrides
+// ============================================//
+.overflow-hidden {
+  overflow: hidden !important;
+}
+$breakpoints:('desktop', 'mobile', 'tablet');
+@each $point in $breakpoints {
+  @include media-query(#{$point}) {
+    .#{$point}-hide {
+      display: none;
+    }
+  }
+};
+@each $dist in $distance {
+  .padding-#{$dist} {
+    padding: #{$dist}px !important;
+  }
+  .margin-#{$dist} {
+    margin: #{$dist}px !important;
+  }
+
+  @each $side in $sides {
+    .padding-#{$side}-#{$dist} {
+      padding-#{$side}: #{$dist}px !important;
+    }
+    .margin-#{$side}-#{$dist} {
+      margin-#{$side}: #{$dist}px !important;
+    }
+  }
+}
+
+// Let the Real Stuff Begin
+// ============================================//

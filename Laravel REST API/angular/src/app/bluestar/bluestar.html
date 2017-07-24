@@ -1,0 +1,52 @@
+<article id="bluestar-sorter" class="has-bg has-bg-grey-light padding-20">
+
+  <!-- sortables -->
+  <div class="grid-container grid-flush">
+
+    <!-- add new post -->
+    <form class="grid-100 margin-bottom-20" (submit)="createPost(rowName.value)">
+      <p class="margin-bottom-5">Add New Post:</p>
+      <label class="input-has-icons" for="form-submit">
+        <input class="grid-100 tablet-grid-100 mobile-grid-100" #rowName />
+        <div class="input-icons">
+          <i class="has-icon icon-add">add</i>
+        </div>
+      </label>
+      <input id="form-submit" type="submit" class="hidden" />
+    </form>
+    <!-- END new post -->
+
+    <!-- post loop -->
+    <div class="clearfix"></div>
+    <section class="">
+      <p class="grid-100 margin-bottom-5">All Post:</p>
+      <div class="post-wrapper input-has-icons" *ngFor="let post of posts">
+
+        <!-- messages -->
+        <span class="message-error"></span>
+
+        <!-- input -->
+        <div class="post margin-bottom-20 overflow-hidden">
+          <form class="grid-100" (submit)="captureText(rowValue.value); updatePost(post)">
+            <input id="postID-{{post.id}}" class="input-light grid-100 tablet-grid-100 mobile-grid-100" type="text" #rowValue value="{{post.text}}" attr.data-orderby="{{post.orderby}}" />
+            <div class="input-icons mobile-padding-top-0">
+              <i class="has-icon icon-add" (click)="captureText(rowValue.value); updatePost(post)">add</i>
+              <a href="#" title="Move Up" (click)="sortPost(post, $event, 'up'); false"><i class="has-icon icon-arrow_drop_down">arrow_drop_down</i></a>
+              <a href="#" title="Move Down" (click)="sortPost(post, $event, 'down'); false"><i class="has-icon icon-arrow_drop_up">arrow_drop_up</i></a>
+              <a href="#" title="Remove item" (click)="removePost(post, $event); false"><i class="has-icon">close</i></a>
+            </div>
+          </form>
+        </div>
+        <!-- END input -->
+
+      </div>
+    </section>
+    <!-- END post loop -->
+
+    <!-- messages -->
+    <div class="message-success"></div>
+
+  </div>
+  <!-- END grid-container -->
+
+</article>
